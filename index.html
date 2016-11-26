@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>kleinesp.de</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style type="text/css">
+body {
+    background-image:url('img/bg1920.jpg');
+    background-position:center middle;
+    
+}
+.container {
+    margin:10% auto 10px auto;    
+}
+.linkespalte {
+    text-align:right;
+    color:#FFFFFF;
+    font-weight:bold;
+}
+#instafeed {
+    position: relative;
+    width:300px;
+    height:300px;
+    margin:30px auto;
+    padding:0;
+}
+#instafeed img {
+    width:300px;
+    height:300px;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    transition:opacity 1s ease; 
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 linkespalte">
+            <h1>Pascal Dupré</h1>
+            <h2>Besser bekannt als kleinesp</h2>
+            <p>Ahoi, mein Name ist Pascal Dupré. Ich wurde am 29.12.1992 um 23.07 Uhr in Altötting geboren. Der Schock war groß. Nicht etwa weil ich rote Haare hatte, sondern weil ich mit einem seltenem Gendefekt mit dem Namen ‘Epidermolysis bullosa’ zur Welt kam.</p>
+        </div>
+        <div class="col-md-4 mittlerspalte">
+            <div id="instafeed"></div>
+        </div>
+		
+		<div class="col-md-4 rechtespalte">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Schreib mir eine Mail:<br>
+                    <a href="mailto:mail@kleinesp.de">mail@kleinesp.de</a>
+                </li>
+                <li class="list-group-item">
+                    Folge mir auf Twitter:<br>
+                    <a href="https://twitter.com/kleinesp">@kleinesp</a>
+                </li>
+                <li class="list-group-item">
+                    Finde mich auf Facebook:<br>
+                    <a href="https://www.facebook.com/profile.php?id=100010880418578">Pascal Dupré</a>
+                </li>
+                <li class="list-group-item">
+                    Folge mir auf instagram:<br>
+                    <a href="https://www.instagram.com/kleinesp/">@kleinesp</a>
+                </li>
+                <li class="list-group-item">
+                    Höre meinen Podcast:<br>
+                    <a href="http://kleinesgespraech.de/">kleinesgespraech.de</a>
+                </li>                
+            </ul>
+        </div>
+	</div>
+
+</div>
+
+<script>
+
+
+var tempscript = null;
+var images = new Array();
+var key = 0;
+
+function startFetch() {
+    if (tempscript) return; 
+    tempscript = document.createElement("script");
+    tempscript.type = "text/javascript";
+    tempscript.id = "tempscript";
+    tempscript.src = "https://api.instagram.com/v1/users/38646087/media/recent/"+
+        "?access_token=38646087.a8ad7a3.27ddc8e9b73a4cc6a168ea24347b623c"+
+    	"&callback=fetchComplete&requestid="
+        + Math.floor(Math.random()*999999).toString();
+    document.body.appendChild(tempscript);
+}
+
+function fetchComplete(response) {
+    document.body.removeChild(tempscript);
+    tempscript = null;
+    
+    if (response.data.length > 0) {
+    	
+        for(var i=0; i<response.data.length; i++) {
+        	images[i] = new Array();
+        	images[i]['url'] = response.data[i].images.standard_resolution.url;
+        	images[i]['caption'] = '';
+            if (response.data[i].caption != null) {
+            	images[i]['caption'] = response.data[i].caption.text;                
+            }
+        }
+        
+        var feedHtml = '';
+        for (i=0; i<images.length; i++) {
+        	feedHtml += '<img src="' + images[i]['url'] + '" src="' + images[i]['caption'] + '" id="feedimage' + i + '">';        	
+        }
+        document.getElementById('instafeed').innerHTML = feedHtml;
+        document.getElementById('feedimage'+key).style.opacity = 1;
+        
+        
+        setTimeout(animateIt, 5000);
+     }
+}
+
+function animateIt() {
+	if (key == images.length-1) {
+		key = 0;
+	}
+	++key;
+	console.log(key);
+	for (i=0; i<images.length; i++) {
+		document.getElementById('feedimage'+i).style.opacity = 0;          
+    }
+	
+	document.getElementById('feedimage'+key).style.opacity = 1;
+	
+	setTimeout(animateIt, 5000);
+}
+
+startFetch();
+
+</script>
+
+</body>
+</html>
