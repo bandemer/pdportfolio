@@ -1,0 +1,22 @@
+{
+  "name": "kpportfolio",
+  "version": "0.0.1",
+  "description": "A portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bandemer/kpportfolio.git"
+  },
+  "author": "Matthias Bandemer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bandemer/kpportfolio/issues"
+  },
+  "homepage": "https://github.com/bandemer/kpportfolio#readme",
+  "devDependencies": {
+    "reload": "^1.1.0"
+  }
+}
