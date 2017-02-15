@@ -6653,6 +6653,14 @@ body {
 @media (min-width: 992px) {
   .linkespalte {
     text-align: right; } }
+@media (max-width: 991px) {
+  .linkespalte {
+    width: 32rem;
+    margin: 0.1rem auto 2rem auto; }
+
+  .rechtespalte {
+    width: 18rem;
+    margin: 2rem auto; } }
 a {
   color: #FFA848;
   font-weight: bold;
@@ -6708,7 +6716,7 @@ a:hover, a:active, a:visited {
   left: 15px;
   opacity: 0;
   transition: opacity 1s ease;
-  background-color: #F0F0F0;
+  background-color: #FFFFFF;
   overflow: none; }
 
 .instafeeditem img {

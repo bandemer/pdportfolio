@@ -12,12 +12,10 @@ $font-size-h4: 1.4rem;
 $font-size-h5: 1rem;
 $font-size-h6: 1rem;
 
-
 $headings-color: #FFFFFF;
 $headings-font-weight: 1500;
     
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-
 
 body {
     background-image:url('../img/bg1920dark.jpg');
@@ -33,6 +31,16 @@ body {
     .linkespalte {
         text-align:right;
     }    
+}
+@include media-breakpoint-down(md) {
+    .linkespalte {
+        width:32rem;
+        margin:0.1rem auto 2rem auto;
+    }  
+    .rechtespalte {
+        width:18rem;
+        margin:2rem auto;
+    }     
 }
 a {
     color: #FFA848;
@@ -90,7 +98,7 @@ a:hover,a:active, a:visited {
     left:15px;
     opacity:0;
     transition:opacity 1s ease;
-    background-color:#F0F0F0;   
+    background-color:#FFFFFF;   
     overflow:none;  
 }
 .instafeeditem img {
