@@ -17,7 +17,7 @@
         <div class="col-lg linkespalte">
             <h1>Pascal Dupré</h1>
             <h2>Besser bekannt als KleinesP</h2>
-            <p>Ahoi, mein Name ist Pascal Dupré. Ich bin seit 2012 als <a href="http://kleinesgespraech.de">Podcaster</a> aktiv. Durch diese Tätigkeit habe ich bereits viele interessante <a href="http://kleinesgespraech.de/gaesteliste/">Menschen</a> kennenlernen dürfen und einige spannende Gespräche geführt.</p> 
+            <p>Ahoi, mein Name ist Pascal Dupré. Ich bin seit 2012 als <a href="http://kleinesgespraech.de">Podcaster</a> aktiv. Durch diese Tätigkeit habe ich bereits viele interessante <a href="http://kleinesgespraech.de/gaesteliste/">Menschen</a> kennenlernen dürfen und viele spannende Gespräche geführt.</p> 
             <p>Mein großes Handycap ist ein seltener Gendefekt mit dem Namen <a href="https://de.wikipedia.org/wiki/Epidermolysis_bullosa">&bdquo;Epidermolysis bullosa&ldquo;</a> - kurz EB. Diese Krankheit und ihre Nebeneffekte sind der Grund, dass ich keiner regulären Arbeit nachgehen kann und auf Unterstützung angewiesen bin.</p>
             <p>Wenn Du mich unterstützen möchtest, kannst Du das z.B. über den Dienst <a href="https://www.patreon.com/KleinesP">Patreon.com</a> tun. Weitere Möglichkeiten mich zu unterstützen, findest Du <a href="http://kleinesgespraech.de/support/">hier</a>.</p>  
         </div>
@@ -27,12 +27,12 @@
 		
 		<div class="col-lg rechtespalte">
 		    <h3>Meine Kontaktinfos:</h3>
-            <ul class="fa-ul kontakt" style="padding-left:42px;">
-				<li><i class="fa-li fa fa-envelope fa-fw fa-3x"></i>Schreib mir eine Mail an<br><a href="mailto:mail@kleinesp.de">mail@kleinesp.de</a></li>
-				<li><i class="fa-li fa fa-twitter fa-fw fa-3x"></i>Folge mir auf Twitter<br><a href="https://twitter.com/KleinesP">@KleinesP</a></li>
-				<li><i class="fa-li fa fa-instagram fa-fw fa-3x"></i>Folge mir auf Instagram<br><a href="https://www.instagram.com/KleinesP/">@KleinesP</a></li>
-				<li><i class="fa-li fa fa-facebook fa-fw fa-3x"></i>Finde mich auf Facebook<br><a href="https://www.facebook.com/profile.php?id=100010880418578">Pascal Dupré</a></li>
-				<li><i class="fa-li fa fa-youtube fa-fw fa-3x"></i>Finde mich auf Youtube<br><a href="https://www.youtube.com/channel/UCCu3A6XuLAW7VHXS4edeu2g">KleinesGespräch</a></li>
+            <ul class="fa-ul kontakt">
+				<li><i class="fa-li fa fa-envelope fa-fw fa-3x" aria-hidden="true"></i>Schreib mir eine Mail an<br><a href="mailto:mail@kleinesp.de">mail@kleinesp.de</a></li>
+				<li><i class="fa-li fa fa-twitter fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Twitter<br><a href="https://twitter.com/KleinesP">@KleinesP</a></li>
+				<li><i class="fa-li fa fa-instagram fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Instagram<br><a href="https://www.instagram.com/KleinesP/">@KleinesP</a></li>
+				<li><i class="fa-li fa fa-facebook fa-fw fa-3x" aria-hidden="true"></i>Finde mich auf Facebook<br><a href="https://www.facebook.com/profile.php?id=100010880418578">Pascal Dupré</a></li>
+				<li><i class="fa-li fa fa-youtube fa-fw fa-3x" aria-hidden="true"></i>Finde mich auf Youtube<br><a href="https://www.youtube.com/channel/UCCu3A6XuLAW7VHXS4edeu2g">KleinesGespräch</a></li>
 			</ul>
         </div>
 	</div>
@@ -44,6 +44,29 @@
 var tempscript = null;
 var images = new Array();
 var key = 0;
+
+function zeitpunkt(timestamp) 
+{
+    var secs = Math.floor(new Date().getTime() / 1000) - timestamp;    
+    	
+    var days = Math.floor(secs / 86400);
+    if (days > 0) {
+        return days + ' Tage';
+    }
+    var hours = Math.floor((secs %= 86400) / 3600);
+    if (hours > 0) {
+        return hours + ' Stunden';
+    }
+    var minutes = Math.floor((secs %= 3600) / 60);
+    if (minutes > 0) {
+        return minutes + ' Minuten';
+    }
+    var seconds = secs % 60;
+    if (seconds > 0) {
+        return seconds + ' Sekunden';
+    }
+    return 'gerade eben';
+}
 
 function startFetch() {
     if (tempscript) return; 
@@ -68,14 +91,26 @@ function fetchComplete(response)
         	images[i] = new Array();
         	images[i]['url'] = response.data[i].images.standard_resolution.url;
         	images[i]['caption'] = '';
+        	images[i]['created'] = '';
+        	images[i]['likes'] = 0;
             if (response.data[i].caption != null) {
             	images[i]['caption'] = response.data[i].caption.text;                
             }
+            if (response.data[i].created_time != null) {
+            	images[i]['created'] = zeitpunkt(response.data[i].created_time);                
+            }
+            if (response.data[i].likes != null) {
+            	images[i]['likes'] = response.data[i].likes.count;                
+            }
         }
         
-        var feedHtml = '<div class="instaheader"><img src=""><h4>KleinesP</h4></div>';
+        var feedHtml = '<div class="instaheader"><img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-19/s150x150/15876179_1815762818690345_2971262958102904832_n.jpg" class="rounded-circle"><h4>kleinesp<br><strong>Pascal Dupré</strong></h4></div>';
         for (i=0; i<images.length; i++) {
-        	feedHtml += '<div id="feedimage' + i + '"><img src="' + images[i]['url'] + '" src="' + images[i]['caption'] + '" ></div>';        	
+        	feedHtml += '<div id="feedimage' + i + '" class="instafeeditem">' +
+        	   '<img src="' + images[i]['url'] + '" src="' + images[i]['caption'] + '" >' +
+        	   '<p class="instacreated">' + images[i]['created'] + '</p>'+
+        	   '<p class="instalikes">Gefällt ' + images[i]['likes'] + ' Mal</p>'+        	   
+        	   '<p class="instacaption">' + images[i]['caption'] + '</p></div>';        	
         }
         document.getElementById('instafeed').innerHTML = feedHtml;
         document.getElementById('feedimage'+key).style.opacity = 1;
@@ -97,7 +132,7 @@ function animateIt()
 	
 	document.getElementById('feedimage'+key).style.opacity = 1;
 	
-	setTimeout(animateIt, 5000);
+	setTimeout(animateIt, 10000);
 }
 
 startFetch();

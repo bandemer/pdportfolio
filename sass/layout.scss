@@ -8,7 +8,7 @@ $inverse-color: #000000;
 $font-size-h1: 2.4rem;
 $font-size-h2: 1.2rem;
 $font-size-h3: 1.4rem;
-$font-size-h4: 1rem;
+$font-size-h4: 1.4rem;
 $font-size-h5: 1rem;
 $font-size-h6: 1rem;
 
@@ -51,26 +51,69 @@ a:hover,a:active, a:visited {
     width:300px;
     height:680px;
     margin:0 auto;
-    padding:0;
+    padding:100px 0;
+    color:#808080;
 }
-
-#instafeed div {
-    padding-top:50px;
-    width:280px;
-    height:480px;
+.instaheader {
+    background-color:#FFFFFF;
     position:absolute;
     top:100px;
     left:10px;
+    padding:0 10px;
+    width:280px;
+    height:500px;
+}
+.instaheader h4 {
+    position:absolute;
+    font-weight:300;
+    top:25px;
+    left:125px;
+    color:#505050;    
+}
+.instaheader strong {
+    font-size:1rem;
+    font-weight:900;
+}
+.instaheader img {
+    position:absolute;
+    top:15px;
+    left:30px;
+    width:75px;
+    height:75px;
+    
+}
+.instafeeditem {
+    width:270px;
+    height:390px;
+    position:absolute;
+    top:210px;
+    left:15px;
     opacity:0;
     transition:opacity 1s ease;
-    background-color:#F0F0F0;
-     
+    background-color:#F0F0F0;   
+    overflow:none;  
 }
-#instafeed div img {
-    top:100px;
-    width:280px;    
+.instafeeditem img {
+    width:270px;
 }
-
+.instafeeditem p {
+    padding:8px 20px 3px 20px;    
+    font-weight:900;
+    font-size:0.8rem;
+    margin-bottom:0;    
+}
+.instafeeditem .instacreated {
+    float:right;
+    font-weight:300;
+    padding-top:11px;
+}
+.instafeeditem .instalikes {
+    font-size:0.9rem;
+    padding-top:10px;
+}
+.kontakt {
+    padding-left:40px;
+}
 .kontakt li {
     margin-bottom:1rem;
     padding-top:0.3rem;    
