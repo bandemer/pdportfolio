@@ -1,6 +1,10 @@
+fonts
+css/font-awesome*
+*.map
 img
 node_modules
 .settings
 .buildpath
 .project
+.sass-cache
 

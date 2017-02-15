@@ -1,0 +1,77 @@
+/* Bootstrap Layout */
+
+$body-bg:  #505050;
+$body-color:    #FFFFFF;
+$inverse-bg:    #FFFFFF;
+$inverse-color: #000000;
+
+$font-size-h1: 2.4rem;
+$font-size-h2: 1.2rem;
+$font-size-h3: 1.4rem;
+$font-size-h4: 1rem;
+$font-size-h5: 1rem;
+$font-size-h6: 1rem;
+
+
+$headings-color: #FFFFFF;
+$headings-font-weight: 1500;
+    
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+body {
+    background-image:url('../img/bg1920dark.jpg');
+    background-position:center middle;
+    padding:2rem;
+    
+}
+.linkespalte {
+    text-align:center; 
+}
+
+@include media-breakpoint-up(lg) {
+    .linkespalte {
+        text-align:right;
+    }    
+}
+a {
+    color: #FFA848;
+    font-weight:bold;
+    text-decoration:underline;    
+}
+a:hover,a:active, a:visited {
+    color: #D08020;
+    text-decoration:none;    
+}
+#instafeed {
+    background-image:url('../img/phone.png');
+    background-position:top center;
+    background-repeat:no-repeat;
+    position: relative;
+    width:300px;
+    height:680px;
+    margin:0 auto;
+    padding:0;
+}
+
+#instafeed div {
+    padding-top:50px;
+    width:280px;
+    height:480px;
+    position:absolute;
+    top:100px;
+    left:10px;
+    opacity:0;
+    transition:opacity 1s ease;
+    background-color:#F0F0F0;
+     
+}
+#instafeed div img {
+    top:100px;
+    width:280px;    
+}
+
+.kontakt li {
+    margin-bottom:1rem;
+    padding-top:0.3rem;    
+}
