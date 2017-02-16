@@ -20,8 +20,7 @@ $headings-font-weight: 1500;
 body {
     background-image:url('../img/bg1920dark.jpg');
     background-position:center middle;
-    padding:2rem;
-    
+    padding:2rem;    
 }
 .linkespalte {
     text-align:center; 
@@ -88,7 +87,6 @@ a:hover,a:active, a:visited {
     left:30px;
     width:75px;
     height:75px;
-    
 }
 .instafeeditem {
     width:270px;
@@ -99,7 +97,8 @@ a:hover,a:active, a:visited {
     opacity:0;
     transition:opacity 1s ease;
     background-color:#FFFFFF;   
-    overflow:none;  
+    overflow:hidden;
+    padding-bottom:5px;  
 }
 .instafeeditem img {
     width:270px;
@@ -118,6 +117,9 @@ a:hover,a:active, a:visited {
 .instafeeditem .instalikes {
     font-size:0.9rem;
     padding-top:10px;
+}
+.instafeeditem .instacaption {
+    padding-top:5px;
 }
 .kontakt {
     padding-left:40px;

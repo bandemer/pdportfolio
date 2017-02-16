@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Pascal Dupré aka KleinesP</title>
-<meta name="description" content="">
+<meta name="description" content="Pascal Dupré - besser bekannt als KleinesP - ist ein Podcaster aus Dresden.">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/layout.css" rel="stylesheet">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico">
 </head>
 <body>
 <body>
-
 <div class="container ">
 
     <div class="row align-items-center">
@@ -39,9 +40,10 @@
 
 </div>
 
-<script>
-
-var tempscript = null;
+<script type="text/javascript">
+var fetchAvatarScript = null;
+var fetchImagesScript = null;
+var avatar = '';
 var images = new Array();
 var key = 0;
 
@@ -50,50 +52,80 @@ function zeitpunkt(timestamp)
     var secs = Math.floor(new Date().getTime() / 1000) - timestamp;    
     	
     var days = Math.floor(secs / 86400);
-    if (days > 0) {
-        return days + ' Tage';
+    if (days == 1) {
+        return '1 Tag';
+    } else if (days > 1) {
+    	return days + ' Tage';
     }
     var hours = Math.floor((secs %= 86400) / 3600);
-    if (hours > 0) {
+    if (hours == 1) {
+        return '1 Stunde';
+    } else if (hours > 1) {
         return hours + ' Stunden';
     }
     var minutes = Math.floor((secs %= 3600) / 60);
-    if (minutes > 0) {
+    if (minutes == 1) {
+        return '1 Minute';
+    } else if (minutes > 1) {
         return minutes + ' Minuten';
     }
     var seconds = secs % 60;
-    if (seconds > 0) {
+    if (seconds == 1) {
+        return '1 Sekunde';
+    } else if (seconds > 1) {
         return seconds + ' Sekunden';
     }
     return 'gerade eben';
 }
 
-function startFetch() {
-    if (tempscript) return; 
-    tempscript = document.createElement("script");
-    tempscript.type = "text/javascript";
-    tempscript.id = "tempscript";
-    tempscript.src = "https://api.instagram.com/v1/users/4647611017/media/recent/"+
-        "?access_token=4142451589.a8ad7a3.0a60906e9aa54b48978f0f20b0b9f597"+
-    	"&callback=fetchComplete&requestid="
+function fetchAvatar() 
+{
+    if (fetchAvatarScript) return; 
+    fetchAvatarScript = document.createElement("script");
+    fetchAvatarScript.type = "text/javascript";
+    fetchAvatarScript.id = "fetchavatarscript";
+    fetchAvatarScript.src = "https://api.instagram.com/v1/users/337177591/"+
+        "?access_token=337177591.a8ad7a3.017fc2c66c2a4bee9f22507cd1d43a8a"+
+        "&callback=fetchAvatarComplete&requestid="
         + Math.floor(Math.random()*999999).toString();
-    document.body.appendChild(tempscript);
+    document.body.appendChild(fetchAvatarScript);
 }
 
-function fetchComplete(response) 
+function fetchAvatarComplete(response) 
 {
-    document.body.removeChild(tempscript);
-    tempscript = null;
-    
+    document.body.removeChild(fetchAvatarScript);
+    fetchAvatarScript = null;
+    if (response.data) {
+    	avatar = response.data.profile_picture;    	
+    }
+    fetchImages();
+}
+
+function fetchImages() 
+{
+    if (fetchImagesScript) return; 
+    fetchImagesScript = document.createElement("script");
+    fetchImagesScript.type = "text/javascript";
+    fetchImagesScript.id = "fetchimagesscript";
+    fetchImagesScript.src = "https://api.instagram.com/v1/users/337177591/media/recent/"+
+        "?access_token=337177591.a8ad7a3.017fc2c66c2a4bee9f22507cd1d43a8a"+
+    	"&callback=fetchImagesComplete&requestid="
+        + Math.floor(Math.random()*999999).toString();
+    document.body.appendChild(fetchImagesScript);
+}
+
+function fetchImagesComplete(response) 
+{
+    document.body.removeChild(fetchImagesScript);
+    fetchImagesScript = null;
     if (response.data.length > 0) {
-    	
-        for(var i=0; i<response.data.length; i++) {
+    	for (var i=0; i<response.data.length; i++) {
         	images[i] = new Array();
         	images[i]['url'] = response.data[i].images.standard_resolution.url;
         	images[i]['caption'] = '';
         	images[i]['created'] = '';
         	images[i]['likes'] = 0;
-            if (response.data[i].caption != null) {
+            if (response.data[i].caption != null) {            	
             	images[i]['caption'] = response.data[i].caption.text;                
             }
             if (response.data[i].created_time != null) {
@@ -102,9 +134,9 @@ function fetchComplete(response)
             if (response.data[i].likes != null) {
             	images[i]['likes'] = response.data[i].likes.count;                
             }
-        }
-        
-        var feedHtml = '<div class="instaheader"><img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-19/s150x150/15876179_1815762818690345_2971262958102904832_n.jpg" class="rounded-circle"><h4>kleinesp<br><strong>Pascal Dupré</strong></h4></div>';
+        }        
+        var feedHtml = '<div class="instaheader"><img src="' + avatar + 
+            '" class="rounded-circle"><h4>kleinesp<br><strong>Pascal Dupré</strong></h4></div>';
         for (i=0; i<images.length; i++) {
         	feedHtml += '<div id="feedimage' + i + '" class="instafeeditem">' +
         	   '<img src="' + images[i]['url'] + '" src="' + images[i]['caption'] + '" >' +
@@ -113,8 +145,7 @@ function fetchComplete(response)
         	   '<p class="instacaption">' + images[i]['caption'] + '</p></div>';        	
         }
         document.getElementById('instafeed').innerHTML = feedHtml;
-        document.getElementById('feedimage'+key).style.opacity = 1;
-        
+        document.getElementById('feedimage'+key).style.opacity = 1;        
         setTimeout(animateIt, 5000);
      }
 }
@@ -125,17 +156,14 @@ function animateIt()
 		key = 0;
 	}
 	++key;
-	
 	for (i=0; i<images.length; i++) {
 		document.getElementById('feedimage'+i).style.opacity = 0;          
     }
-	
 	document.getElementById('feedimage'+key).style.opacity = 1;
-	
 	setTimeout(animateIt, 10000);
 }
 
-startFetch();
+fetchAvatar();
 
 </script>
 
