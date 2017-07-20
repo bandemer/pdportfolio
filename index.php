@@ -11,8 +11,7 @@
 <link rel="icon" href="/favicon.ico">
 </head>
 <body>
-<body>
-<div class="container ">
+<div class="container">
 
     <div class="row align-items-center">
         <div class="col-lg linkespalte">
