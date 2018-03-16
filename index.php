@@ -17,25 +17,24 @@
         <div class="col-lg linkespalte">
             <h1>Pascal Dupré</h1>
             <h2>Besser bekannt als KleinesP</h2>
-            <p>Ahoi, mein Name ist Pascal Dupré. Ich bin seit 2012 als Podcaster aktiv. Unter der Marke <a href="http://kleinesgespraech.de">KleinesGespräch</a> veröffentliche ich regelmäßig Episoden mit Themen aus aller Welt und meine Gäste kommen dabei nicht zu kurz.</p>
-            <p>Durch diese Tätigkeit habe ich bereits viele <a href="http://kleinesgespraech.de/gaesteliste/">interessante Menschen</a> kennenlernen dürfen und viele spannende Gespräche geführt.</p>
-            <p>Mein großes Handicap ist ein seltener Gendefekt mit dem Namen <a href="https://de.wikipedia.org/wiki/Epidermolysis_bullosa">„Epidermolysis bullosa“</a> - kurz EB. Diese Krankheit und ihre Nebeneffekte sind der Grund, dass ich keiner regulären Arbeit nachgehen kann und auf <a href="https://www.patreon.com/KleinesP">Unterstützung</a> angewiesen bin.</p>            
+            <p>Ahoi, mein Name ist Pascal Dupré. Ich bin seit 2012 als Podcaster aktiv. Unter der Marke <a href="https://podcastdepot.de">PodcastDepot</a> veröffentliche ich regelmäßig Episoden mit Themen aus aller Welt und meine Gäste kommen dabei nicht zu kurz.</p>
+            <p>Durch diese Tätigkeit habe ich bereits viele <a href="https://kleinesgespraech.de/gaesteliste/">interessante Menschen</a> kennenlernen dürfen und viele spannende Gespräche geführt.</p>
+            <p>Mein großes Handicap ist ein seltener Gendefekt mit dem Namen <a href="https://de.wikipedia.org/wiki/Epidermolysis_bullosa">„Epidermolysis bullosa“</a> - kurz EB. Diese Krankheit und ihre Nebeneffekte sind der Grund, dass ich keiner regulären Arbeit nachgehen kann und auf <a href="https://www.patreon.com/KleinesP">Unterstützung</a> angewiesen bin.</p>
         </div>
         <div class="col-lg">
             <div id="instafeed"></div>
         </div>
-		
-		<div class="col-lg rechtespalte">
-		    <ul class="fa-ul kontakt">
-				<li><i class="fa-li fa fa-envelope fa-fw fa-3x" aria-hidden="true"></i>Schreib mir eine Mail an<br><a href="mailto:mail@kleinesp.de">mail@kleinesp.de</a></li>
-				<li><i class="fa-li fa fa-twitter fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Twitter<br><a href="https://twitter.com/KleinesP">@KleinesP</a></li>
-				<li><i class="fa-li fa fa-instagram fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Instagram<br><a href="https://www.instagram.com/KleinesP/">@KleinesP</a></li>
-				<li><i class="fa-li fa fa-facebook fa-fw fa-3x" aria-hidden="true"></i>Finde mich auf Facebook<br><a href="https://www.facebook.com/profile.php?id=100010880418578">Pascal Dupré</a></li>
-				<li><i class="fa-li fa fa-youtube fa-fw fa-3x" aria-hidden="true"></i>Finde mich auf Youtube<br><a href="https://www.youtube.com/channel/UCCu3A6XuLAW7VHXS4edeu2g">KleinesGespräch</a></li>
-				<li><i class="fa-li fa fa-podcast fa-fw fa-3x" aria-hidden="true"></i>Höre meinen Podcast<br><a href="http://kleinesgespraech.de">KleinesGespräch.de</a></li>
-			</ul>
+
+        <div class="col-lg rechtespalte">
+            <ul class="fa-ul kontakt">
+                <li><i class="fa-li fa fa-twitter fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Twitter<br><a href="https://twitter.com/KleinesP">@KleinesP</a></li>
+                <li><i class="fa-li fa fa-instagram fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Instagram<br><a href="https://www.instagram.com/KleinesP/">@KleinesP</a></li>
+                <li><i class="fa-li fa fa-facebook fa-fw fa-3x" aria-hidden="true"></i>Finde mich auf Facebook<br><a href="https://www.facebook.com/profile.php?id=100010880418578">Pascal Dupré</a></li>
+                <li><i class="fa-li fa fa-youtube fa-fw fa-3x" aria-hidden="true"></i>Finde mich auf Youtube<br><a href="https://www.youtube.com/channel/UCCu3A6XuLAW7VHXS4edeu2g">KleinesGespräch</a></li>
+                <li><i class="fa-li fa fa-podcast fa-fw fa-3x" aria-hidden="true"></i>Höre meine Podcasts<br><a href="https://podcastdepot.de">PodcastDepot.de</a></li>
+            </ul>
         </div>
-	</div>
+    </div>
 
 </div>
 
@@ -46,15 +45,15 @@ var avatar = '';
 var images = new Array();
 var key = 0;
 
-function zeitpunkt(timestamp) 
+function zeitpunkt(timestamp)
 {
-    var secs = Math.floor(new Date().getTime() / 1000) - timestamp;    
-    	
+    var secs = Math.floor(new Date().getTime() / 1000) - timestamp;
+
     var days = Math.floor(secs / 86400);
     if (days == 1) {
         return '1 Tag';
     } else if (days > 1) {
-    	return days + ' Tage';
+        return days + ' Tage';
     }
     var hours = Math.floor((secs %= 86400) / 3600);
     if (hours == 1) {
@@ -77,9 +76,9 @@ function zeitpunkt(timestamp)
     return 'gerade eben';
 }
 
-function fetchAvatar() 
+function fetchAvatar()
 {
-    if (fetchAvatarScript) return; 
+    if (fetchAvatarScript) return;
     fetchAvatarScript = document.createElement("script");
     fetchAvatarScript.type = "text/javascript";
     fetchAvatarScript.id = "fetchavatarscript";
@@ -90,76 +89,76 @@ function fetchAvatar()
     document.body.appendChild(fetchAvatarScript);
 }
 
-function fetchAvatarComplete(response) 
+function fetchAvatarComplete(response)
 {
     document.body.removeChild(fetchAvatarScript);
     fetchAvatarScript = null;
     if (response.data) {
-    	avatar = response.data.profile_picture;    	
+        avatar = response.data.profile_picture;
     }
     fetchImages();
 }
 
-function fetchImages() 
+function fetchImages()
 {
-    if (fetchImagesScript) return; 
+    if (fetchImagesScript) return;
     fetchImagesScript = document.createElement("script");
     fetchImagesScript.type = "text/javascript";
     fetchImagesScript.id = "fetchimagesscript";
     fetchImagesScript.src = "https://api.instagram.com/v1/users/337177591/media/recent/"+
         "?access_token=337177591.a8ad7a3.017fc2c66c2a4bee9f22507cd1d43a8a"+
-    	"&callback=fetchImagesComplete&requestid="
+        "&callback=fetchImagesComplete&requestid="
         + Math.floor(Math.random()*999999).toString();
     document.body.appendChild(fetchImagesScript);
 }
 
-function fetchImagesComplete(response) 
+function fetchImagesComplete(response)
 {
     document.body.removeChild(fetchImagesScript);
     fetchImagesScript = null;
     if (response.data.length > 0) {
-    	for (var i=0; i<response.data.length; i++) {
-        	images[i] = new Array();
-        	images[i]['url'] = response.data[i].images.standard_resolution.url;
-        	images[i]['caption'] = '';
-        	images[i]['created'] = '';
-        	images[i]['likes'] = 0;
-            if (response.data[i].caption != null) {            	
-            	images[i]['caption'] = response.data[i].caption.text;                
+        for (var i=0; i<response.data.length; i++) {
+            images[i] = new Array();
+            images[i]['url'] = response.data[i].images.standard_resolution.url;
+            images[i]['caption'] = '';
+            images[i]['created'] = '';
+            images[i]['likes'] = 0;
+            if (response.data[i].caption != null) {
+                images[i]['caption'] = response.data[i].caption.text;
             }
             if (response.data[i].created_time != null) {
-            	images[i]['created'] = zeitpunkt(response.data[i].created_time);                
+                images[i]['created'] = zeitpunkt(response.data[i].created_time);
             }
             if (response.data[i].likes != null) {
-            	images[i]['likes'] = response.data[i].likes.count;                
+                images[i]['likes'] = response.data[i].likes.count;
             }
-        }        
-        var feedHtml = '<div class="instaheader"><img src="' + avatar + 
+        }
+        var feedHtml = '<div class="instaheader"><img src="' + avatar +
             '" class="rounded-circle"><h4>kleinesp<br><strong>Pascal Dupré</strong></h4></div>';
         for (i=0; i<images.length; i++) {
-        	feedHtml += '<div id="feedimage' + i + '" class="instafeeditem">' +
-        	   '<img src="' + images[i]['url'] + '" src="' + images[i]['caption'] + '" >' +
-        	   '<p class="instacreated">' + images[i]['created'] + '</p>'+
-        	   '<p class="instalikes">Gefällt ' + images[i]['likes'] + ' Mal</p>'+        	   
-        	   '<p class="instacaption">' + images[i]['caption'] + '</p></div>';        	
+            feedHtml += '<div id="feedimage' + i + '" class="instafeeditem">' +
+               '<img src="' + images[i]['url'] + '" src="' + images[i]['caption'] + '" >' +
+               '<p class="instacreated">' + images[i]['created'] + '</p>'+
+               '<p class="instalikes">Gefällt ' + images[i]['likes'] + ' Mal</p>'+
+               '<p class="instacaption">' + images[i]['caption'] + '</p></div>';
         }
         document.getElementById('instafeed').innerHTML = feedHtml;
-        document.getElementById('feedimage'+key).style.opacity = 1;        
+        document.getElementById('feedimage'+key).style.opacity = 1;
         setTimeout(animateIt, 5000);
      }
 }
 
-function animateIt() 
+function animateIt()
 {
-	if (key == images.length-1) {
-		key = 0;
-	}
-	++key;
-	for (i=0; i<images.length; i++) {
-		document.getElementById('feedimage'+i).style.opacity = 0;          
+    if (key == images.length-1) {
+        key = 0;
     }
-	document.getElementById('feedimage'+key).style.opacity = 1;
-	setTimeout(animateIt, 10000);
+    ++key;
+    for (i=0; i<images.length; i++) {
+        document.getElementById('feedimage'+i).style.opacity = 0;
+    }
+    document.getElementById('feedimage'+key).style.opacity = 1;
+    setTimeout(animateIt, 10000);
 }
 
 fetchAvatar();
