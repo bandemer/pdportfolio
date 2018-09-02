@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Pascal Dupré aka KleinesP</title>
-<meta name="description" content="Pascal Dupré - besser bekannt als KleinesP - ist ein Podcaster aus Dresden.">
+<title>Pascal Dupré</title>
+<meta name="description" content="Pascal Dupré ist ein Podcaster aus Dresden.">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/layout.css" rel="stylesheet">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -16,7 +16,6 @@
     <div class="row align-items-center">
         <div class="col-lg linkespalte">
             <h1>Pascal Dupré</h1>
-            <h2>Besser bekannt als KleinesP</h2>
             <p>Ahoi, mein Name ist Pascal Dupré. Ich bin seit 2012 als Podcaster aktiv. Unter der Marke <a href="https://podcastdepot.de">PodcastDepot</a> veröffentliche ich regelmäßig Episoden mit Themen aus aller Welt und meine Gäste kommen dabei nicht zu kurz.</p>
             <p>Durch diese Tätigkeit habe ich bereits viele <a href="https://kleinesgespraech.de/gaesteliste/">interessante Menschen</a> kennenlernen dürfen und viele spannende Gespräche geführt.</p>
             <p>Mein großes Handicap ist ein seltener Gendefekt mit dem Namen <a href="https://de.wikipedia.org/wiki/Epidermolysis_bullosa">„Epidermolysis bullosa“</a> - kurz EB. Diese Krankheit und ihre Nebeneffekte sind der Grund, dass ich keiner regulären Arbeit nachgehen kann und auf <a href="https://www.patreon.com/KleinesP">Unterstützung</a> angewiesen bin.</p>
@@ -27,8 +26,8 @@
 
         <div class="col-lg rechtespalte">
             <ul class="fa-ul kontakt">
-                <li><i class="fa-li fa fa-twitter fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Twitter<br><a href="https://twitter.com/KleinesP">@KleinesP</a></li>
-                <li><i class="fa-li fa fa-instagram fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Instagram<br><a href="https://www.instagram.com/KleinesP/">@KleinesP</a></li>
+                <li><i class="fa-li fa fa-twitter fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Twitter<br><a href="https://twitter.com/PsclDpr">@PsclDpr</a></li>
+                <li><i class="fa-li fa fa-instagram fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Instagram<br><a href="https://www.instagram.com/PsclDpr/">@PsclDpr</a></li>
                 <li><i class="fa-li fa fa-facebook fa-fw fa-3x" aria-hidden="true"></i>Finde mich auf Facebook<br><a href="https://www.facebook.com/profile.php?id=100010880418578">Pascal Dupré</a></li>
                 <li><i class="fa-li fa fa-youtube fa-fw fa-3x" aria-hidden="true"></i>Finde mich auf Youtube<br><a href="https://www.youtube.com/channel/UCCu3A6XuLAW7VHXS4edeu2g">KleinesGespräch</a></li>
                 <li><i class="fa-li fa fa-podcast fa-fw fa-3x" aria-hidden="true"></i>Höre meine Podcasts<br><a href="https://podcastdepot.de">PodcastDepot.de</a></li>
@@ -134,7 +133,7 @@ function fetchImagesComplete(response)
             }
         }
         var feedHtml = '<div class="instaheader"><img src="' + avatar +
-            '" class="rounded-circle"><h4>kleinesp<br><strong>Pascal Dupré</strong></h4></div>';
+            '" class="rounded-circle"><h4>PsclDpr<br><strong>Pascal Dupré</strong></h4></div>';
         for (i=0; i<images.length; i++) {
             feedHtml += '<div id="feedimage' + i + '" class="instafeeditem">' +
                '<img src="' + images[i]['url'] + '" src="' + images[i]['caption'] + '" >' +
