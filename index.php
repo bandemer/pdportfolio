@@ -11,6 +11,23 @@
 <link rel="icon" href="/favicon.ico">
 </head>
 <body>
+<header class="sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container">
+            <h1><a class="navbar-brand" href="/">Pascal Dupré</a></h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/">Startseite</a></li><li class="nav-item mr-1"><a class="nav-link active" href="https://pascaldupre.de/blog/">Blog</a></li><li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/blog/support/"><i class="fa fa-fw fa-heart" aria-hidden="true"></i> Support</a></li>                </ul>
+                <a href="/blog/feed/" class="btn">
+                    <i class="fa fa-fw fa-rss" aria-hidden="true"></i> RSS-Feed
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
 <div class="container">
 
     <div class="row align-items-center">

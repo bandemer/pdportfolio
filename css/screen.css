@@ -31,3 +31,12 @@ body {
     opacity:0;
     transition:opacity 1s ease; 
 }
+.navbar a {
+    text-decoration:none;
+}
+
+header {
+    background-color:#000000;
+    border-bottom:2px solid #FFFFFF;
+    
+}
