@@ -20,7 +20,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/">Startseite</a></li><li class="nav-item mr-1"><a class="nav-link active" href="https://pascaldupre.de/blog/">Blog</a></li><li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/blog/support/"><i class="fa fa-fw fa-heart" aria-hidden="true"></i> Support</a></li>                </ul>
+                    <li class="nav-item mr-1"><a class="nav-link active" href="https://pascaldupre.de/">Startseite</a></li>
+                    <li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/blog/">Blog</a></li>
+                    <li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/blog/support/"><i class="fa fa-fw fa-heart" aria-hidden="true"></i> Support</a></li>                </ul>
                 <a href="/blog/feed/" class="btn">
                     <i class="fa fa-fw fa-rss" aria-hidden="true"></i> RSS-Feed
                 </a>
@@ -28,7 +30,7 @@
         </div>
     </nav>
 </header>
-<div class="container">
+<div class="container mt-5">
 
     <div class="row align-items-center">
         <div class="col-lg linkespalte">
@@ -53,6 +55,14 @@
     </div>
 
 </div>
+
+<footer class="my-5">
+
+    <div class="container text-center">
+        <a href="/blog/impressum/">Impressum</a> | <a href="/blog/datenschutz/">Datenschutz</a>
+    </div>
+
+</footer>
 
 <script type="text/javascript">
 var fetchAvatarScript = null;
