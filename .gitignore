@@ -1,10 +1,4 @@
 blog
-fonts
-css/font-awesome*
-*.map
-*.ico
-*.png
-img
 node_modules
 .settings
 .buildpath

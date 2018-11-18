@@ -6,7 +6,7 @@
 <title>Pascal Dupré</title>
 <meta name="description" content="Pascal Dupré ist ein Podcaster aus Dresden.">
 <link href="css/font-awesome.min.css" rel="stylesheet">
-<link href="css/layout.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="/favicon.ico">
 </head>
