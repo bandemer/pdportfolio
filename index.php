@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Pascal Dupré</title>
 <meta name="description" content="Pascal Dupré ist ein Podcaster aus Dresden.">
-<link href="css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link href="css/bootstrap.css" rel="stylesheet">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="/favicon.ico">
@@ -24,7 +24,7 @@
                     <li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/blog/">Blog</a></li>
                     <li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/blog/support/"><i class="fa fa-fw fa-heart" aria-hidden="true"></i> Support</a></li>                </ul>
                 <a href="/blog/feed/" class="btn">
-                    <i class="fa fa-fw fa-rss" aria-hidden="true"></i> RSS-Feed
+                    <i class="fas fa-rss" aria-hidden="true"></i> RSS-Feed
                 </a>
             </div>
         </div>
@@ -45,11 +45,26 @@
 
         <div class="col-lg rechtespalte">
             <ul class="fa-ul kontakt">
-                <li><i class="fa-li fa fa-twitter fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Twitter<br><a href="https://twitter.com/PsclDpr">@PsclDpr</a></li>
-                <li><i class="fa-li fa fa-instagram fa-fw fa-3x" aria-hidden="true"></i>Folge mir auf Instagram<br><a href="https://www.instagram.com/PsclDpr/">@PsclDpr</a></li>
-                <li><i class="fa-li fa fa-facebook fa-fw fa-3x" aria-hidden="true"></i>Finde mich auf Facebook<br><a href="https://www.facebook.com/profile.php?id=100010880418578">Pascal Dupré</a></li>
-                <li><i class="fa-li fa fa-youtube fa-fw fa-3x" aria-hidden="true"></i>Finde mich auf Youtube<br><a href="https://www.youtube.com/channel/UCCu3A6XuLAW7VHXS4edeu2g">KleinesGespräch</a></li>
-                <li><i class="fa-li fa fa-podcast fa-fw fa-3x" aria-hidden="true"></i>Höre meine Podcasts<br><a href="https://podcastdepot.de">PodcastDepot.de</a></li>
+                <li><i class="fa-li fas fa-podcast fa-fw fa-3x" aria-hidden="true"></i>
+                    <span>Höre meine Podcasts</span>
+                    <a href="https://podcastdepot.de">PodcastDepot.de</a>
+                </li>
+                <li><i class="fa-li fab fa-patreon fa-fw fa-3x" aria-hidden="true"></i>
+                    <span>Werde mein Patron</span>
+                    <a href="https://www.patreon.com/KleinesP">Patreon.com</a>
+                </li>
+                <li><i class="fa-li fab fa-twitter fa-fw fa-3x" aria-hidden="true"></i>
+                    <span>Folge mir auf Twitter</span>
+                    <a href="https://twitter.com/PsclDpr">@PsclDpr</a>
+                </li>
+                <li><i class="fa-li fab fa-instagram fa-fw fa-3x" aria-hidden="true"></i>
+                    <span>Folge mir auf Instagram</span>
+                    <a href="https://www.instagram.com/PsclDpr/">@PsclDpr</a>
+                </li>
+                <li><i class="fa-li fab fa-youtube fa-fw fa-3x" aria-hidden="true"></i>
+                    <span>Finde mich auf Youtube</span>
+                    <a href="https://www.youtube.com/channel/UCCu3A6XuLAW7VHXS4edeu2g">KleinesGespräch</a>
+                </li>
             </ul>
         </div>
     </div>

@@ -6893,4 +6893,8 @@ a:hover, a:active, a:visited {
   margin-bottom: 1rem;
   padding-top: 0.3rem; }
 
+.kontakt li span {
+  display: block;
+  margin-top: 0.5rem; }
+
 /*# sourceMappingURL=bootstrap.css.map */
