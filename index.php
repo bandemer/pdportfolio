@@ -22,6 +22,7 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item mr-1"><a class="nav-link active" href="https://pascaldupre.de/">Startseite</a></li>
                     <li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/blog/">Blog</a></li>
+                    <li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/blog/ueber-mich/">Über mich</a></li>
                     <li class="nav-item mr-1"><a class="nav-link" href="https://pascaldupre.de/blog/support/"><i class="fa fa-fw fa-heart" aria-hidden="true"></i> Support</a></li>                </ul>
                 <a href="/blog/feed/" class="btn">
                     <i class="fas fa-rss" aria-hidden="true"></i> RSS-Feed
