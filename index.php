@@ -53,7 +53,7 @@
                 </li>
                 <li><i class="fa-li fab fa-patreon fa-fw fa-3x" aria-hidden="true"></i>
                     <span>Werde mein Patron</span>
-                    <a href="https://www.patreon.com/KleinesP">Patreon.com</a>
+                    <a href="https://www.patreon.com/pscldpr">Patreon.com</a>
                 </li>
                 <li><i class="fa-li fab fa-twitter fa-fw fa-3x" aria-hidden="true"></i>
                     <span>Folge mir auf Twitter</span>
