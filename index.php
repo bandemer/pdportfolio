@@ -47,6 +47,10 @@
 
         <div class="col-lg rechtespalte">
             <ul class="fa-ul kontakt">
+                <li><i class="fa-li fab fa-twitch fa-fw fa-3x" aria-hidden="true"></i>
+                    <span>Triff mich auf Twitch</span>
+                    <a href="https://www.twitch.tv/pscldpr">pscldpr</a>
+                </li>
                 <li><i class="fa-li fas fa-podcast fa-fw fa-3x" aria-hidden="true"></i>
                     <span>Höre meine Podcasts</span>
                     <a href="https://podcastdepot.de">PodcastDepot.de</a>
