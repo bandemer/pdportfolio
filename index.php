@@ -130,7 +130,7 @@ function fetchAvatar()
     fetchAvatarScript.type = "text/javascript";
     fetchAvatarScript.id = "fetchavatarscript";
     fetchAvatarScript.src = "https://api.instagram.com/v1/users/337177591/"+
-        "?access_token=337177591.a8ad7a3.017fc2c66c2a4bee9f22507cd1d43a8a"+
+        "?access_token=337177591.a8ad7a3.22d101f5cff74c46ae22fcd314fe70e7"+
         "&callback=fetchAvatarComplete&requestid="
         + Math.floor(Math.random()*999999).toString();
     document.body.appendChild(fetchAvatarScript);
@@ -153,7 +153,7 @@ function fetchImages()
     fetchImagesScript.type = "text/javascript";
     fetchImagesScript.id = "fetchimagesscript";
     fetchImagesScript.src = "https://api.instagram.com/v1/users/337177591/media/recent/"+
-        "?access_token=337177591.a8ad7a3.017fc2c66c2a4bee9f22507cd1d43a8a"+
+        "?access_token=337177591.a8ad7a3.22d101f5cff74c46ae22fcd314fe70e7"+
         "&callback=fetchImagesComplete&requestid="
         + Math.floor(Math.random()*999999).toString();
     document.body.appendChild(fetchImagesScript);
