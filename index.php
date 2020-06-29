@@ -37,8 +37,8 @@
         <div class="col-lg linkespalte">
             <h1>Pascal Dupré</h1>
             <p>Hey Ho und willkommen!<br>Mein Name ist Pascal und seit 1992 lebe ich mit dem seltenen Gendefekt <a href="https://de.wikipedia.org/wiki/Epidermolysis_bullosa">Epidermolysis Bullosa</a> - kurz EB. Davon lasse ich mich aber nicht unterkriegen und versuche jeden Tag bestmöglich zu nutzen.</p>
-            <p>Auf meinem <a href="/blog/">Blog</a> betreibe ich Aufklärung zu EB und lasse Dich an meinem Leben teilhaben. Auf <a href="https://twitter.com/PsclDpr">Twitter</a> und <a href="https://www.instagram.com/PsclDpr/">Instagram</a> dokumentiere ich meinen Alltag, rege mich auf oder zeige mein neustes Abenteuer. Außerdem <a href="https://podcastdepot.de/">podcaste</a> ich und hin und wieder findest Du auch ein Video von mir auf <a href="https://www.youtube.com/channel/UCCu3A6XuLAW7VHXS4edeu2g">YouTube</a>.</p>
-            <p>Sollte Dir gefallen was ich mache, dann sag es weiter oder lass mir doch ein netten Gruß zu kommen. Falls du mich unterstützen möchtest, geht das über <a href="https://www.patreon.com/KleinesP">Patreon</a> oder über meine <a href="https://www.amazon.de/registry/wishlist/17IDY1PJ2R4FF">Amazon-Wunschliste</a>. All das muss aber nicht sein. Für mich ist es Freude genug wenn Du Dich an meinem Schaffen erfreust.</p>
+            <p>Auf meinem <a href="/blog/">Blog</a> betreibe ich Aufklärung zu EB und lasse Dich an meinem Leben teilhaben. Auf <a href="https://twitter.com/PsclDpr">Twitter</a> und <a href="https://www.instagram.com/PsclDpr/">Instagram</a> dokumentiere ich meinen Alltag, rege mich auf oder zeige mein neustes Abenteuer. Aktuell triffst Du mich vor allem auf <a href="https://www.twitch.tv/pscldpr">Twitch</a> und hin und wieder findest Du auch ein Video von mir auf <a href="https://www.youtube.com/channel/UCCu3A6XuLAW7VHXS4edeu2g">YouTube</a>.</p>
+            <p>Sollte Dir gefallen was ich mache, dann sag es weiter oder lass mir doch ein netten Gruß zu kommen. Falls du mich unterstützen möchtest, geht das über <a href="https://www.patreon.com/pscldpr">Patreon</a> oder über meine <a href="https://www.amazon.de/hz/wishlist/ls/2ELPSVOOP3EEA">Amazon-Wunschliste</a>. All das muss aber nicht sein. Für mich ist es Freude genug wenn Du Dich an meinem Schaffen erfreust.</p>
             <p>Lass es Dir gut gehen.<br>Dein Pascal Dupré</p>
         </div>
         <div class="col-lg">
@@ -51,14 +51,6 @@
                     <span>Triff mich auf Twitch</span>
                     <a href="https://www.twitch.tv/pscldpr">pscldpr</a>
                 </li>
-                <li><i class="fa-li fas fa-podcast fa-fw fa-3x" aria-hidden="true"></i>
-                    <span>Höre meine Podcasts</span>
-                    <a href="https://podcastdepot.de">PodcastDepot.de</a>
-                </li>
-                <li><i class="fa-li fab fa-patreon fa-fw fa-3x" aria-hidden="true"></i>
-                    <span>Werde mein Patron</span>
-                    <a href="https://www.patreon.com/pscldpr">Patreon.com</a>
-                </li>
                 <li><i class="fa-li fab fa-twitter fa-fw fa-3x" aria-hidden="true"></i>
                     <span>Folge mir auf Twitter</span>
                     <a href="https://twitter.com/PsclDpr">@PsclDpr</a>
@@ -66,6 +58,14 @@
                 <li><i class="fa-li fab fa-instagram fa-fw fa-3x" aria-hidden="true"></i>
                     <span>Folge mir auf Instagram</span>
                     <a href="https://www.instagram.com/PsclDpr/">@PsclDpr</a>
+                </li>
+                <li><i class="fa-li fab fa-patreon fa-fw fa-3x" aria-hidden="true"></i>
+                    <span>Werde mein Patron</span>
+                    <a href="https://www.patreon.com/pscldpr">Patreon.com</a>
+                </li>
+                <li><i class="fa-li fas fa-podcast fa-fw fa-3x" aria-hidden="true"></i>
+                    <span>Höre meine Podcasts</span>
+                    <a href="https://podcastdepot.de">PodcastDepot.de</a>
                 </li>
                 <li><i class="fa-li fab fa-youtube fa-fw fa-3x" aria-hidden="true"></i>
                     <span>Finde mich auf Youtube</span>
