@@ -1,5 +1,6 @@
 blog
 node_modules
+img/insta/*.jpg
 .settings
 .buildpath
 .project
