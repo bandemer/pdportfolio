@@ -1,4 +1,6 @@
 blog
+img/insta/*.jpg
+img/insta/*.json
 node_modules
 .settings
 .buildpath
