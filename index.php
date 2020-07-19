@@ -112,15 +112,17 @@ var key = 0;
 function animateIt()
 {
 
-    if (counter == 13) {
+    if (counter == 12) {
         counter = 0;
     }
-    ++counter;
+
     for (i=1; i<=12; i++) {
         document.getElementById('feedimage'+i).style.opacity = 0;
     }
-    key = counter % 12;
+    key = counter % 12 +1;
+    console.log(counter);
     document.getElementById('feedimage'+key).style.opacity = 1;
+    ++counter;
     setTimeout(animateIt, 10000);
 }
 
