@@ -120,7 +120,6 @@ function animateIt()
         document.getElementById('feedimage'+i).style.opacity = 0;
     }
     key = counter % 12 +1;
-    console.log(counter);
     document.getElementById('feedimage'+key).style.opacity = 1;
     ++counter;
     setTimeout(animateIt, 10000);
