@@ -36,7 +36,7 @@
     <div class="row align-items-center">
         <div class="col-lg linkespalte">
             <h1>Pascal Dupré</h1>
-            <p>Hey Ho und willkommen!<br>Mein Name ist Pascal und seit 1992 lebe ich mit dem seltenen Gendefekt <a href="https://de.wikipedia.org/wiki/Epidermolysis_bullosa">Epidermolysis Bullosa</a> - kurz EB. Davon lasse ich mich aber nicht unterkriegen und versuche jeden Tag bestmöglich zu nutzen.</p>
+            <p>Hey Ho und willkommen!<br>Mein Name ist Pascal und seit 1992 lebe ich mit dem seltenen Gendefekt <a href="https://pascaldupre.de/blog/ueber-mich/">Epidermolysis Bullosa</a> - kurz EB. Davon lasse ich mich aber nicht unterkriegen und versuche jeden Tag bestmöglich zu nutzen.</p>
             <p>Auf meinem <a href="/blog/">Blog</a> betreibe ich Aufklärung zu EB und lasse Dich an meinem Leben teilhaben. Auf <a href="https://twitter.com/PsclDpr">Twitter</a> und <a href="https://www.instagram.com/PsclDpr/">Instagram</a> dokumentiere ich meinen Alltag, rege mich auf oder zeige mein neustes Abenteuer. Aktuell triffst Du mich vor allem auf <a href="https://www.twitch.tv/pscldpr">Twitch</a> und hin und wieder findest Du auch ein Video von mir auf <a href="https://www.youtube.com/channel/UCCu3A6XuLAW7VHXS4edeu2g">YouTube</a>.</p>
             <p>Sollte Dir gefallen was ich mache, dann sag es weiter oder lass mir doch ein netten Gruß zu kommen. Falls du mich unterstützen möchtest, geht das über <a href="https://www.patreon.com/pscldpr">Patreon</a> oder über meine <a href="https://www.amazon.de/hz/wishlist/ls/2ELPSVOOP3EEA">Amazon-Wunschliste</a>. All das muss aber nicht sein. Für mich ist es Freude genug wenn Du Dich an meinem Schaffen erfreust.</p>
             <p>Lass es Dir gut gehen.<br>Dein Pascal Dupré</p>
@@ -86,129 +86,45 @@
 </footer>
 
 <script type="text/javascript">
-var fetchAvatarScript = null;
-var fetchImagesScript = null;
-var avatar = '';
-var images = new Array();
+
+function generateInstaFeed()
+{
+    var feedHtml = '<div class="instaheader"><img src="img/insta/avatar.jpg"' +
+        ' class="rounded-circle"><h4>PsclDpr<br>' +
+        '<strong>Pascal Dupré</strong></h4></div>';
+    for (i=1; i<=12; i++) {
+        feedHtml += '<div id="feedimage' + i + '" class="instafeeditem">' +
+           '<img src="img/insta/image' + i + '.jpg" >' +
+           '<p class="instacreated"></p>'+
+           '<p class="instalikes"></p>'+
+           '<p class="instacaption"></p></div>';
+    }
+    document.getElementById('instafeed').innerHTML = feedHtml;
+
+    for (i=1; i<=12; i++) {
+        document.getElementById('feedimage'+i).style.opacity = 1;
+    }
+    setTimeout(animateIt, 5000);
+
+}
+var counter = 0;
 var key = 0;
-
-function zeitpunkt(timestamp)
-{
-    var secs = Math.floor(new Date().getTime() / 1000) - timestamp;
-
-    var days = Math.floor(secs / 86400);
-    if (days == 1) {
-        return '1 Tag';
-    } else if (days > 1) {
-        return days + ' Tage';
-    }
-    var hours = Math.floor((secs %= 86400) / 3600);
-    if (hours == 1) {
-        return '1 Stunde';
-    } else if (hours > 1) {
-        return hours + ' Stunden';
-    }
-    var minutes = Math.floor((secs %= 3600) / 60);
-    if (minutes == 1) {
-        return '1 Minute';
-    } else if (minutes > 1) {
-        return minutes + ' Minuten';
-    }
-    var seconds = secs % 60;
-    if (seconds == 1) {
-        return '1 Sekunde';
-    } else if (seconds > 1) {
-        return seconds + ' Sekunden';
-    }
-    return 'gerade eben';
-}
-
-function fetchAvatar()
-{
-    if (fetchAvatarScript) return;
-    fetchAvatarScript = document.createElement("script");
-    fetchAvatarScript.type = "text/javascript";
-    fetchAvatarScript.id = "fetchavatarscript";
-    fetchAvatarScript.src = "https://api.instagram.com/v1/users/337177591/"+
-        "?access_token=337177591.a8ad7a3.22d101f5cff74c46ae22fcd314fe70e7"+
-        "&callback=fetchAvatarComplete&requestid="
-        + Math.floor(Math.random()*999999).toString();
-    document.body.appendChild(fetchAvatarScript);
-}
-
-function fetchAvatarComplete(response)
-{
-    document.body.removeChild(fetchAvatarScript);
-    fetchAvatarScript = null;
-    if (response.data) {
-        avatar = response.data.profile_picture;
-    }
-    fetchImages();
-}
-
-function fetchImages()
-{
-    if (fetchImagesScript) return;
-    fetchImagesScript = document.createElement("script");
-    fetchImagesScript.type = "text/javascript";
-    fetchImagesScript.id = "fetchimagesscript";
-    fetchImagesScript.src = "https://api.instagram.com/v1/users/337177591/media/recent/"+
-        "?access_token=337177591.a8ad7a3.22d101f5cff74c46ae22fcd314fe70e7"+
-        "&callback=fetchImagesComplete&requestid="
-        + Math.floor(Math.random()*999999).toString();
-    document.body.appendChild(fetchImagesScript);
-}
-
-function fetchImagesComplete(response)
-{
-    document.body.removeChild(fetchImagesScript);
-    fetchImagesScript = null;
-    if (response.data.length > 0) {
-        for (var i=0; i<response.data.length; i++) {
-            images[i] = new Array();
-            images[i]['url'] = response.data[i].images.standard_resolution.url;
-            images[i]['caption'] = '';
-            images[i]['created'] = '';
-            images[i]['likes'] = 0;
-            if (response.data[i].caption != null) {
-                images[i]['caption'] = response.data[i].caption.text;
-            }
-            if (response.data[i].created_time != null) {
-                images[i]['created'] = zeitpunkt(response.data[i].created_time);
-            }
-            if (response.data[i].likes != null) {
-                images[i]['likes'] = response.data[i].likes.count;
-            }
-        }
-        var feedHtml = '<div class="instaheader"><img src="' + avatar +
-            '" class="rounded-circle"><h4>PsclDpr<br><strong>Pascal Dupré</strong></h4></div>';
-        for (i=0; i<images.length; i++) {
-            feedHtml += '<div id="feedimage' + i + '" class="instafeeditem">' +
-               '<img src="' + images[i]['url'] + '" src="' + images[i]['caption'] + '" >' +
-               '<p class="instacreated">' + images[i]['created'] + '</p>'+
-               '<p class="instalikes">Gefällt ' + images[i]['likes'] + ' Mal</p>'+
-               '<p class="instacaption">' + images[i]['caption'] + '</p></div>';
-        }
-        document.getElementById('instafeed').innerHTML = feedHtml;
-        document.getElementById('feedimage'+key).style.opacity = 1;
-        setTimeout(animateIt, 5000);
-     }
-}
-
 function animateIt()
 {
-    if (key == images.length-1) {
-        key = 0;
+
+    if (counter == 13) {
+        counter = 0;
     }
-    ++key;
-    for (i=0; i<images.length; i++) {
+    ++counter;
+    for (i=1; i<=12; i++) {
         document.getElementById('feedimage'+i).style.opacity = 0;
     }
+    key = counter % 12;
     document.getElementById('feedimage'+key).style.opacity = 1;
     setTimeout(animateIt, 10000);
 }
 
-fetchAvatar();
+generateInstaFeed();
 
 </script>
 
